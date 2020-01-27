@@ -5,5 +5,9 @@
 3. 查看一下，study-dao的pom.xml文件中有没有下面这种格式的代码：
 
 ```xml
-
+    <parent>
+        <groupId></groupId>
+        <artifactId></artifactId>
+        <version></version>
+    </parent>
 ```
