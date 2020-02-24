@@ -153,52 +153,99 @@
 >参数 | 类型 | 说明
 >:-:|:-:|:-:
 >goodsName | String | 帖子名称
->orderByOldOrNew | String | 根据新旧排序【可选项，三选一】
->orderByPrice | String | 根据价格排序【可选项，三选一】
->orderByTime | String | 根据时间排序【可选项，三选一】
+>orderByOldOrNew | String | 根据新旧排序【可选项，三选一】{'全新','九成新','旧'}
+>orderByPrice | String | 根据价格排序【可选项，三选一】{'ASC','DESC'}
+>orderByTime | String | 根据时间排序【可选项，三选一】{'ASC','DESC'}
+>'ASC' = 升序</br>
+>'DESC' = 降序
 
 + 返回参数【Post类型】
 
 >参数 | 类型 | 说明
 >:-:|:-:|:-:
->goodsName | String | 帖子名称
+>goodsId |String | 商品id
+>goodsName |String | 商品名称
+>introduce |String | 商品介绍
+>goodsPrice |Float | 商品价格
+>firstLabel |String | 商品一级标签
+>secondLabel |String | 商品二级标签
+>oldOrNew |String | 商品新旧
+>clickNumber | int | 点击查看量
+>releaseTime |String | 上架时间
+>sellTime |String | 出售时间
+>goodsComment | String | 商品的评论
+>goodsCommentTime | String | 被评论时间
+>goodsBooleanSell | Stirng |状态值 =【在售、下架、商家编辑中】
+>goodsPictures.pictureId | String | 商品的每一个图片的id
+>goodsPictures.address | String | 图片的地址
+>goodsPictures.pictureNumber | String | 图片的序号
 
 + 返回数据实示例
 
 ```JSON
-
+[
+    {
+        "goodsId": "1121",
+        "goodsName": "联想Y7000 8G内存 128G固态硬盘 2T机械硬盘",
+        "introduce": null,
+        "goodsPrice": 5555.0,
+        "firstLabel": null,
+        "secondLabel": null,
+        "oldOrNew": "旧",
+        "clickNumber": 0,
+        "releaseTime": "2020-02-15 22:44:27",
+        "sellTime": null,
+        "goodsComment": null,
+        "goodsCommentTime": null,
+        "goodsBooleanSell": null,
+        "goodsPictures": [
+            {
+                "pictureId": "1",
+                "goodsId": "1121",
+                "address": "wechatapp-youning.oss-cn-hangzhou.aliyuncs.com/Goods/058d66e6c7c34027995e4a0d8e8dcb4c.png",
+                "pictureNumber": 0
+            }
+        ]
+    }
+]
 ```
 
-> 注：
+> 注：无
 
-### 4
+### 4. 发布商品
 
-+ URL = <http://localhost:8080/wxssm/Post/byPostIdSelectPostInfo>
++ URL = <http://localhost:8080/wxssm/Goods/insertGoods>
 + 支持格式：JSON
-+ HTTP 请求方式 ：GET
-+ 请求参数
++ HTTP 请求方式 ：POST
++ 请求参数【Goods类型】
 
 >参数 | 类型 | 说明
 >:-:|:-:|:-:
->postId | String | 帖子id
+>goodsName |String | 商品名称
+>introduce |String | 商品介绍
+>goodsPrice |Float | 商品价格
+>firstLabel |String | 商品一级标签
+>secondLabel |String | 商品二级标签
+>oldOrNew |String | 商品新旧
+>file | MultipartFile[] | file是数组，可上传多图。
 
-+ 返回参数【Post类型】
++ 返回参数
 
 >参数 | 类型 | 说明
 >:-:|:-:|:-:
->postId | String | 帖子id
+>GoodsId | String | 商品id
 
 + 返回数据实示例
 
 ```JSON
-
+1121
 ```
 
 > 注：
 
-### 5
+### 5. 通过商品的goodsID更新数据
 
-+ URL = <http://localhost:8080/wxssm/Post/byPostIdSelectPostInfo>
++ URL = <http://localhost:8080/wxssm/Goods/updateGoodsInfo>
 + 支持格式：JSON
 + HTTP 请求方式 ：GET
 + 请求参数
@@ -223,7 +270,7 @@
 
 ### 6
 
-+ URL = <http://localhost:8080/wxssm/Post/byPostIdSelectPostInfo>
++ URL = <http://localhost:8080/wxssm/Goods/byPostIdSelectPostInfo>
 + 支持格式：JSON
 + HTTP 请求方式 ：GET
 + 请求参数
