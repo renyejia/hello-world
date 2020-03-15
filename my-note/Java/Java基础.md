@@ -1,8 +1,6 @@
 # Java语言认识总结
 
-[1. 在Windows上配置运行环境](###在Windows上配置运行环境)</br>
-[2. Java特点](##Java特点)</br>
-[3. 安装设置JDK](##安装设置JDK)
+[TOC]
 
 ## 1. Java运行环境类别
 
