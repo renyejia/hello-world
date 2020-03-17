@@ -2,6 +2,14 @@
 
 [TOC]
 
+## 用户模块
+
+### 1. 显示
+
+### 2. 查询
+
+### 3.方法是
+
 ## 商品模块
 
 ### 1. 显示商品表里的所有的商品信息
@@ -29,9 +37,9 @@
 >clickNumber | int | 点击查看量
 >releaseTime |String | 上架时间
 >sellTime |String | 出售时间
->goodsPictures.pictureId | String | 商品的每一个图片的id
->goodsPictures.address | String | 图片的地址
->goodsPictures.pictureNumber | String | 图片的序号
+>goodsPictures . pictureId | String | 商品的每一个图片的id
+>goodsPictures . address | String | 图片的地址
+>goodsPictures . pictureNumber | String | 图片的序号
 
 + 返回数据实示例
 
@@ -109,9 +117,9 @@
 >goodsComment | String | 商品的评论
 >goodsCommentTime | String | 被评论时间
 >goodsBooleanSell | Stirng |状态值 =【在售、下架、商家编辑中】
->goodsPictures.pictureId | String | 商品的每一个图片的id
->goodsPictures.address | String | 图片的地址
->goodsPictures.pictureNumber | String | 图片的序号
+>goodsPictures . pictureId | String | 商品的每一个图片的id
+>goodsPictures . address | String | 图片的地址
+>goodsPictures . pictureNumber | String | 图片的序号
 
 + 返回数据实示例
 
@@ -156,10 +164,12 @@
 >orderByOldOrNew | String | 根据新旧排序【可选项，三选一】{'全新','九成新','旧'}
 >orderByPrice | String | 根据价格排序【可选项，三选一】{'ASC','DESC'}
 >orderByTime | String | 根据时间排序【可选项，三选一】{'ASC','DESC'}
->'ASC' = 升序</br>
->'DESC' = 降序
+---
 
-+ 返回参数【Post类型】
+>+ 'ASC' = 升序
+>+ 'DESC' = 降序
+
++ 返回参数【Goods类型】
 
 >参数 | 类型 | 说明
 >:-:|:-:|:-:
@@ -252,7 +262,22 @@
 
 >参数 | 类型 | 说明
 >:-:|:-:|:-:
->postId | String | 帖子id
+>goodsId |String | 商品id
+>goodsName |String | 商品名称
+>introduce |String | 商品介绍
+>goodsPrice |Float | 商品价格
+>firstLabel |String | 商品一级标签
+>secondLabel |String | 商品二级标签
+>oldOrNew |String | 商品新旧
+>clickNumber | int | 点击查看量
+>releaseTime |String | 上架时间
+>sellTime |String | 出售时间
+>goodsComment | String | 商品的评论
+>goodsCommentTime | String | 被评论时间
+>goodsBooleanSell | Stirng |状态值 =【在售、下架、商家编辑中】
+>goodsPictures.pictureId | String | 商品的每一个图片的id
+>goodsPictures.address | String | 图片的地址
+>goodsPictures.pictureNumber | String | 图片的序号
 
 + 返回参数【Post类型】
 
