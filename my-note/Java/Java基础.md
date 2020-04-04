@@ -19,7 +19,7 @@
 + 体系结构中立
 + 可移植性：与C和C++不同，Java中的基本数据类型的大小以及有关运算都做了明确的说明。
 
-+ + 例如，Java中 int 永远为32位的整数，而C/C++ 中，int 可能是16位整数、32位整数，也可能是编译器提供商指定的其他大小，唯一的限制只是 int 类型的大小不能低于 short int, 并且不能高于 long int。
+  + 例如，Java中 int 永远为32位的整数，而C/C++ 中，int 可能是16位整数、32位整数，也可能是编译器提供商指定的其他大小，唯一的限制只是 int 类型的大小不能低于 short int, 并且不能高于 long int。
 
 + 解释型
 + 高性能
@@ -32,49 +32,31 @@
 
 网址：https://www.oracle.com/java/technologies/javase-downloads.html
 
-
-
 ![image.png](https://cdn.nlark.com/yuque/0/2020/png/641808/1585635237434-00d74bb1-48a1-4c76-84a4-1d5aa50ac0f1.png)
-
-
 
 + 在Windows上，启动安装程序，会询问安装位置，默认为 `C:\Program Files\Java\jdk1.8.0_version` (版本可能不同)
 + 在Mac上，运行安装程序，会把软件安装到`/Libraiy/Java/JavaVirtualMachines/jdk1.8.0_version.jdk/Contents/Home`
 + 在 Linux上，只需要把 `.tar.gz` 文件解压缩到你选择的某个位置，如你的主目录，或者`/opt`。如果从 ***RPM*** 文件安装，则要反复检查是否安装在` /usr/java/jdkl.8.O_version` 。
 
-
-
 ### 2.2 在Windows上配置运行环境
-
-
 
 右键点击 **我的电脑**，**打开** → **属性** → **高级****系统****设置** → **环境****变量** → **系统****变量**：
 
-
-
 + 新建一个系统变量：
 
-+ + 变量名：JAVA_HOME
+  + 变量名：JAVA_HOME
   + 变量值：D:\PATH\Java\jdk-13.0.1 *（此处填写自己的 Java安装路径）*
 
 + Path变量 → 添加变量值：*( 用一个分号分隔新增 )*
 
-+ + %JAVA_HOME%\bin
+  + %JAVA_HOME%\bin
   + %JAVA_HOME%\jre\bin
-
-
 
 配置完成后，按键盘 win + R 输入 cmd，在命令提示框内输入 `java -version` ，看到安装的jdk版本，即环境配置成功。
 
-
-
 ## 三、Java基本程序结构
 
-
-
 ### 3.1 一个简单的Java应用程序
-
-
 
 ```java
 public class FirstSample{
@@ -83,8 +65,6 @@ public class FirstSample{
   }
 }
 ```
-
-
 
 注：Java区分大小写
 
@@ -96,11 +76,7 @@ public class FirstSample{
 
 类名是以大写字母开头的名词。若由多个单词组成，则每个单词首字母大写。即驼峰命名法。
 
-
-
 ### 3.2 注释
-
-
 
 三种注释方法
 
@@ -116,19 +92,11 @@ public class FirstSample{
 
 注：在Java中，注释不可以嵌套。
 
-
-
 ### 3.3 数据类型
-
-
 
 在Java中，一共有8种基本类型（primitive type），其中有4种整型、2种浮点型、1种用于表示 Unicode编码的字符单元的字符类型 char 和 1种用于表示真值的 boolean 类型。
 
-
-
 + 整型
-
-
 
 | 类型  | 存储需求 | 取值范围                                               |
 | ----- | -------- | ------------------------------------------------------ |
@@ -137,52 +105,40 @@ public class FirstSample{
 | long  | 8字节    | -9 223 372 036 854 775 808 ~ 9 223 372 036 854 775 807 |
 | byte  | 1字节    | -128 ~ 127                                             |
 
-
-
 > 注意， Java 没有任何无符号（unsigned ) 形式的 int、long、short 或 byte 类型。
 
 + 浮点类型
-
-
 
 | 类型   | 存储需求 | 取值范围                                             |
 | ------ | -------- | ---------------------------------------------------- |
 | float  | 4字节    | 约 ± 3.402 823 47E+38F (有效位数为 6~7位)            |
 | double | 8字节    | 约 ± 1.797 693 134 862 315 70E+308 (有效位数为 15位) |
 
-
-
 + char类型
 
-+ + char类型的字面量值要用单引号括起来。例如：'A' 是编码值为 65 所对应的字符常量。
+  + char类型的字面量值要用单引号括起来。例如：'A' 是编码值为 65 所对应的字符常量。
 
 + boolean类型
 
-+ + (布尔）类型有两个值：false 和 true，用来判定逻辑条件，整型值和布尔值之间不能进行相互转换。
-
-
+  + (布尔）类型有两个值：false 和 true，用来判定逻辑条件，整型值和布尔值之间不能进行相互转换。
 
 ### 3.4 变量
 
-
-
 + **变量**
 
-+ + 逐一声明每一个变量可以提高程序的可读性。
+  + 逐一声明每一个变量可以提高程序的可读性。
   + 声明一个变量之后，必须用赋值语句对变量进行显式初始化，千万不要使用未初始化的变量。
 
 + **常量**
 
-+ + 在 Java中，利用关键字 final指示常量。
+  + 在 Java中，利用关键字 final指示常量。
   + 关键字 final 表示这个变量只能被赋值一次。习惯上，常量名使用全大写。例如：
 
-```java
-final double CM_PER_INCH = 2.54;
-```
+  ```java
+  final double CM_PER_INCH = 2.54;
+  ```
 
-
-
-+ + 可以使用关键字 static final 设置一个类常量，可以在一个类中的多个方法中使用。
+  + 可以使用关键字 static final 设置一个类常量，可以在一个类中的多个方法中使用。
 
 ```java
 public class Constant2{
@@ -193,17 +149,11 @@ public class Constant2{
 }
 ```
 
-
-
 需要注意，类常量的定义位于 main 方法的外部。因此，在同一个类的其他方法中也可以使用这个常量。
 
 而且，如果一个常量被声明为 public，那么其他类的方法也可以使用这个常量。
 
-
-
 ### 3.5 运算符
-
-
 
 “%”取模，求余数。
 
@@ -213,19 +163,13 @@ public class Constant2{
 
 整数被 0 除会产生异常，浮点数被 0 除会得到无穷大或NaN。
 
-
-
 #### 3.5.1 数学函数与常量
-
-
 
 通过网址：https://www.oracle.com/java/technologies/javase-downloads.html 
 
 点击对应的 Documentation Download，类似于 jdk-14_doc-all.zip 文件样式的API文档。
 
 通过在API文档中搜索Math，可以了解到相关的一些数学函数。
-
-
 
 **数值转换**
 
@@ -239,15 +183,11 @@ public class Constant2{
 
 大转化为小，需强制类型转换。
 
-
-
 #### 3.5.2 关系和 boolean 运算符
-
-
 
 + 三元操作符：
 
-+ + x < y ? x : y  会返回x、y中，小的那个。
+  + x < y ? x : y  会返回x、y中，小的那个。
 
 && 逻辑 (与)、  || 逻辑 (或)、  ! 逻辑 (非)
 
